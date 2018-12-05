@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --mode development",
+    "prod": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "KT",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
