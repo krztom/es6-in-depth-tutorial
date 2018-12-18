@@ -1,6 +1,6 @@
 function hello() {
-  let message= "Hello!";
-  console.log(message);
+    let message= "Hello!";
+    console.log(message);
 }
 function greeting() {
     let message = "How are you?";
@@ -65,10 +65,60 @@ class Calculator {
     static multiply_1( a,b ) {
         return a*b;
     }
-
+    
     static add_1( a,b ) {
         return a+b;
     }
 };
 let math_1 = Calculator.multiply_1( 9,10);
 console.log( math_1 );
+
+function Vehicle(make, year) {
+    this.make = make;
+    this.year = year;
+}
+
+Vehicle.prototype.color;
+Vehicle.prototype.bio = function(){
+    return `A ${this.color} ${this.make} made in ${this.year}.`;
+};
+
+
+let s = new Vehicle("Tesla", 2017);
+s.color = "black";
+
+console.log(s.bio());
+
+
+const contains = (word, letter) => {
+    let letters = word.split("");
+    let letter_set = new Set(letters);
+    return letter_set.has(letter);
+};
+let true_check = contains("west", "e");
+let false_check = contains("north", "e");
+
+console.log( false_check);
+
+
+//maps 
+
+let string = 'supercalifragilisticexpialidocious';
+const countLetter = (word, orig_letter) => {
+    let letters = new Map();
+    for (let i=0; i<word.length; i++) {
+        let letter = word[i];
+        if (!letters.has(letter)) {
+            letters.set(letter, 1);
+        } else {
+            letters.set(letter, letters.get(letter) + 1);
+        }
+    }
+    return letters.get(orig_letter);
+};
+let a_count = countLetter(string, 'a');
+let x_count = countLetter(string, 'x');
+
+
+console.log( a_count );
+console.log( x_count );
